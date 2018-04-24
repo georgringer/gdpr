@@ -1,10 +1,15 @@
 # TYPO3 Extension `gdpr`
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/GeorgRinger/19.99)
 [![License](https://poser.pugx.org/georgringer/gdpr/license)](https://packagist.org/packages/georgringer/gdpr)
 
 
 This extensions makes it easier for website owners and agencies to have the site compatible to the GDPR (German "DSGVO").
+
+## Costs
+
+It costs **€ 1450 excl. taxes** and a special price before 25th of May 2018 of **€ 990 excl. taxes**. Contact me - *Georg Ringer* via [mail](mail@ringer.it), [TYPO3 slack](https://forger.typo3.com/slack) or [twitter](https://twitter.com/georg_ringer).
+
+## Screenshots
 
 **Be aware** that this extension does **not** cover every area of the GDPR - especially the frontend part is **not** covered!
 
@@ -17,7 +22,6 @@ This extensions makes it easier for website owners and agencies to have the site
 ## Requirements
 
 - TYPO3 CMS 9 LTS / 8
-- **COMPOSER** currently required, at least for the randomization part
 
 ## Drawbacks
 
