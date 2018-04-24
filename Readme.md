@@ -9,6 +9,8 @@ This extensions makes it easier for website owners and agencies to have the site
 
 It costs **€ 1450 excl. taxes** and a special price before 25th of May 2018 of **€ 990 excl. taxes**. Contact me - *Georg Ringer* via [mail](mail@ringer.it), [TYPO3 slack](https://forger.typo3.com/slack) or [twitter](https://twitter.com/georg_ringer).
 
+Costs are **per** installation - discounts possible, ask me directly.
+
 ## Screenshots
 
 **Be aware** that this extension does **not** cover every area of the GDPR - especially the frontend part is **not** covered!
