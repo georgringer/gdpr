@@ -21,7 +21,7 @@ It costs **€ 1450 excl. taxes** and a special price before 25th of May 2018 of
 
 ## Requirements
 
-- TYPO3 CMS 9 LTS / 8
+- TYPO3 CMS 8 LTS & 9 LTS
 
 ## Drawbacks
 
