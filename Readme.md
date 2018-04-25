@@ -7,7 +7,13 @@ This extensions makes it easier for website owners and agencies to have the site
 
 ## Costs
 
-It costs **€ 1450 excl. taxes** and a special price before 25th of May 2018 of **€ 990 excl. taxes**. Contact me - *Georg Ringer* via [mail](mail@ringer.it), [TYPO3 slack](https://forger.typo3.com/slack) or [twitter](https://twitter.com/georg_ringer).
+- License for one site: *€ 1450 excl. taxes*
+- Agency license for up to 25 sites: *€ 5000 excl. taxes*
+- Agency license for unlimited sites: *€ 7500 excl. taxes*
+
+**Important: Get a 30% discount before 25th May 2018!**
+
+Contact me - *Georg Ringer* via [mail](mail@ringer.it), [TYPO3 slack](https://forger.typo3.com/slack) or [twitter](https://twitter.com/georg_ringer).
 
 Costs are **per** installation - discounts possible, ask me directly.
 
