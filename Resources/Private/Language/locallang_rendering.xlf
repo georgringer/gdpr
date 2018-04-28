@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2014-06-02T11:48:40Z" product-name="gdpr">
+        <header/>
+        <body>
+            <trans-unit id="overlay.title" xml:space="preserve">
+				<source>Click to load video!</source>
+			</trans-unit>
+			<trans-unit id="overlay.description" xml:space="preserve">
+				<source>Load the video by clicking here. Only then data will be transferred to the video provider!</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

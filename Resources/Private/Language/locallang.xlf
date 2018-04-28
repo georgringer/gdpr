@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-02T11:48:40Z" product-name="gdpr">
+		<header/>
+		<body>
+			<trans-unit id="palette" xml:space="preserve">
+				<source>GDPR</source>
+			</trans-unit>
+			<trans-unit id="be_users.gdpr_module_enable" xml:space="preserve">
+				<source>Enable GDPR module</source>
+			</trans-unit>
+			<trans-unit id="field.randomized_field" xml:space="preserve">
+				<source>Record is randomized</source>
+			</trans-unit>
+			<trans-unit id="field.restriction_field" xml:space="preserve">
+				<source>Record must be hidden everywhere</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

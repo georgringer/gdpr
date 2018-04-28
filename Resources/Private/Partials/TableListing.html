@@ -1,0 +1,93 @@
+<table class="table table-striped table-hover">
+	<thead>
+	<tr>
+		<f:if condition="{mixedView}">
+			<th></th>
+		</f:if>
+		<th>uid</th>
+		<th>{f:translate(key:meta.titleLabel,default:meta.titleField)}</th>
+		<td></td>
+	</tr>
+	</thead>
+	<f:for each="{rows}" as="row">
+		<tr>
+			<f:if condition="{mixedView}">
+				<td>
+					<f:if condition="{row.{meta.gdprRestrictionField}}">
+						<f:then>
+							<core:icon identifier="actions-system-cache-clear-impact-high"/>
+						</f:then>
+						<f:else>
+							<core:icon identifier="actions-version-workspace-preview"/>
+						</f:else>
+					</f:if>
+				</td>
+			</f:if>
+			<td>{row.uid}</td>
+			<td>{row.{meta.titleField}}</td>
+			<td class="col-control">
+				<div class="btn-group" role="group">
+					<f:if condition="{row.{meta.gdprRestrictionField}}">
+						<f:then>
+							<f:link.action
+								action="reenable"
+								arguments="{id:row.uid,table:table}"
+								class="btn btn-default t3js-modal-trigger"
+								data="{
+													severity: 'error',
+													title: 'Reactivate record',
+													content: 'Should this record be really reactivated? It will be available again in backend and frontend!',
+													button-ok-text: 'Reenable'}">
+								<core:icon identifier="actions-edit-unhide"/>
+							</f:link.action>
+						</f:then>
+						<f:else>
+							<f:link.action
+								action="disable"
+								arguments="{id:row.uid,table:table}"
+								class="btn btn-default t3js-modal-trigger"
+								data="{
+													severity: 'error',
+													title: 'Disable record',
+													content: 'Should this record be really disabled? It will be hidden in backend and frontend!',
+													button-ok-text: 'Disable'}">
+								<core:icon identifier="actions-edit-hide"/>
+							</f:link.action>
+						</f:else>
+					</f:if>
+
+					<f:if condition="{meta.gdprRandomizedField}">
+						<f:then>
+							<f:link.action
+								action="randomize"
+								arguments="{id:row.uid,table:table}"
+								class="btn btn-default t3js-modal-trigger"
+								data="{
+													severity: 'error',
+													title: 'Randomize record',
+													content: 'Should this record be really randomized? Content will be gone forever!',
+													button-ok-text: 'Randomize'}">
+								<core:icon identifier="actions-synchronize"/>
+							</f:link.action>
+						</f:then>
+						<f:else>
+							<span class="btn btn-default disabled"><core:icon identifier="empty-empty"/></span>
+						</f:else>
+					</f:if>
+
+					<f:link.action
+						action="delete"
+						arguments="{id:row.uid,table:table}"
+						class="btn btn-default t3js-modal-trigger"
+						data="{
+													severity: 'error',
+													title: 'Delete record',
+													content: 'Should this record be really deleted? It will be gone forever!',
+													button-ok-text: 'Final delete'}">
+						<core:icon identifier="actions-edit-delete"/>
+					</f:link.action>
+				</div>
+			</td>
+		</tr>
+	</f:for>
+</table>

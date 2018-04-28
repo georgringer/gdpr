@@ -1,0 +1,63 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/Default"/>
+
+<f:section name="content">
+    <h1>Search</h1>
+
+    <f:form action="search" object="{search}" name="search" class="form-horizontal">
+
+        <div class="form-group">
+            <label for="searchWord" class="col-xs-2 control-label">
+                Searchword
+            </label>
+
+            <div class="col-xs-4">
+                <f:form.textfield id="searchWord" property="searchWord" class="form-control"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="sensitiveOnly" class="col-xs-2 control-label">
+                sensitiveOnly
+            </label>
+
+            <div class="col-xs-4">
+                <f:form.checkbox value="1" id="sensitiveOnly" property="sensitiveOnly" class="checkbox"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-4">
+                <button type="submit" class="btn btn-default">
+                    <core:icon identifier="actions-search"/>
+                    Search
+                </button>
+            </div>
+        </div>
+    </f:form>
+
+    <f:if condition="{searchPerformed}">
+        <f:if condition="{result}">
+            <f:then>
+                <f:for each="{result}" as="data" key="table">
+                    <div class="panel panel-space panel-default">
+                        <div class="panel-heading">{f:translate(key:data.meta.title,default:data.meta.title)}
+                            ({data.rows -> f:count()})
+                        </div>
+                        <f:render partial="TableListing"
+                                  arguments="{rows:data.rows,meta:data.meta,table:table,mixedView:1}"/>
+                    </div>
+                </f:for>
+            </f:then>
+            <f:else>
+                <div class="alert alert-info">No results found</div>
+            </f:else>
+
+        </f:if>
+    </f:if>
+
+
+</f:section>
+</html>

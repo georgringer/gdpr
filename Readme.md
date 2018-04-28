@@ -118,6 +118,23 @@ By using a CLI command, existing IPs can be anonymized. Example:
 
 A report shows a short information about potential actions.
 
+### Force privacy for youtube & vimeo videos
+
+The ViewHelper `<f:media>` which is used by the core to show videos of youtube and vimeo embeds those videos directly via iframe.
+The rendering for those 2 is changed to ask the user explicitly to render the iframe.
+
+An additional improvement of this is an increased performance of the page as the iframe is not loaded with the page. 
+
+#### Configuration
+
+Use the argument `additionalConfig` to provide the path to the template. By default the mentioned file is in `EXT:fluid_styled_content/Resources/Private/Partials/Media/Rendering/Video.html`
+
+```
+    <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:media additionalConfig="{gdpr-template:'EXT:gdpr/Resources/Private/Templates/Rendering/Youtube.html'}" class="video-embed-item" file="{file}" width="{dimensions.width}" height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" />
+    </html>
+```
+
 ## Usage
 
 1. Install the extension

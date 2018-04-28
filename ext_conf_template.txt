@@ -1,0 +1,5 @@
+# cat=import module/enable/22; type=string; label=Locale for Randomizer:can be e.g. de_DE
+randomizerLocale = en_US
+
+# cat=import module/enable/22; type=string; label=Improve privacy of media renderer:Show youtube & vimeo videos only after user's consent
+overloadMediaRenderer = true

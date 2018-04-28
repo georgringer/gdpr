@@ -1,0 +1,33 @@
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>uid</th>
+        <th>Header</th>
+        <th>Page</th>
+        <td></td>
+    </tr>
+    </thead>
+    <f:for each="{forms}" as="row">
+        <tr>
+            <td>
+                <a href="{row._meta.links.editContentElement}">
+                    <core:iconForRecord table="tt_content" row="{row}"/>
+                    {row.uid}
+                </a>
+            </td>
+            <td>{row.header}</td>
+            <td>
+                <core:iconForRecord table="pages" row="{row._meta.page}"/>
+                {row._meta.path}
+            </td>
+            <td class="col-control">
+                <div class="btn-group" role="group">
+                    <a href="{row._meta.links.editContentElement}" class="btn btn-default">
+                        <core:icon identifier="actions-document-open"/>
+                    </a>
+
+                </div>
+            </td>
+        </tr>
+    </f:for>
+</table>
