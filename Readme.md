@@ -7,11 +7,13 @@ This extensions makes it easier for website owners and agencies to have the site
 
 ## Costs
 
-- License for one site: *€ 1450 excl. taxes*
-- Agency license for up to 25 sites: *€ 5000 excl. taxes*
-- Agency license for unlimited sites: *€ 7500 excl. taxes*
+- Personal license for one site: *€ 240 excl. taxes*
+- Professional license for one site: *€ 1450 excl. taxes* (*\**)
+- Agency license for up to 25 sites: *€ 5000 excl. taxes* (*\**)
+- Agency license for unlimited sites: *€ 7500 excl. taxes* (*\**)
+- Academic license for universities, research Institutions, and colleges  *€ 490 excl. taxes*
 
-**Important: Get a 30% discount before 25th May 2018!**
+**(*\**) Important: Get a 30% discount before 25th May 2018!**
 
 Contact me - *Georg Ringer* via [mail](mail@ringer.it), [TYPO3 slack](https://forger.typo3.com/slack) or [twitter](https://twitter.com/georg_ringer).
 
