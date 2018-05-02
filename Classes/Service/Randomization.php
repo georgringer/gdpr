@@ -6,6 +6,7 @@ namespace GeorgRinger\Gdpr\Service;
 use Faker\Factory;
 use GeorgRinger\Gdpr\Domain\Model\Dto\ExtensionConfiguration;
 use GeorgRinger\Gdpr\Domain\Model\Dto\Table;
+use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\Core\Environment;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -24,7 +25,9 @@ class Randomization
         $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class);
         $locale = $extensionConfiguration->getRandomizerLocale() ?: 'en_US';
 
-        if (!Environment::isComposerMode()) {
+        if (class_exists(Environment::class) && !Environment::isComposerMode()
+            || class_exists(Bootstrap::class) && !Bootstrap::usesComposerClassLoading()
+        ) {
             @include 'phar://' . ExtensionManagementUtility::extPath('gdpr') . 'Resources/Private/Php/faker.phar/vendor/autoload.php';
         }
 

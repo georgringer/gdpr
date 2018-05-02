@@ -17,7 +17,7 @@ class ExtensionConfiguration implements SingletonInterface
 
     public function __construct()
     {
-        $settings = (array)unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['gdpr'], ['allowed_classes' => false]);
+        $settings = (array)unserialize((string)$GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['gdpr'], ['allowed_classes' => false]);
         if (!empty($settings)) {
             $this->randomizerLocale = $settings['randomizerLocale'];
             $this->overloadMediaRenderer = isset($settings['overloadMediaRenderer']) ? (bool)$settings['overloadMediaRenderer'] : true;
