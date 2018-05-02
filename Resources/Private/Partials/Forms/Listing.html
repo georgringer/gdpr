@@ -22,10 +22,21 @@
             </td>
             <td class="col-control">
                 <div class="btn-group" role="group">
+                    <f:if condition="{row._meta.isValidated}">
+                        <f:then>
+                            <f:link.action action="formStatusUpdate" arguments="{type:row._meta.type,formId:row.uid,status:0}" class="btn btn-success">
+                                <core:icon identifier="actions-view-page"/>
+                            </f:link.action>
+                        </f:then>
+                        <f:else>
+                            <f:link.action action="formStatusUpdate" arguments="{type:row._meta.type,formId:row.uid,status:1}" class="btn btn-warning">
+                                <core:icon identifier="actions-view-page"/>
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
                     <a href="{row._meta.links.editContentElement}" class="btn btn-default">
                         <core:icon identifier="actions-document-open"/>
                     </a>
-
                 </div>
             </td>
         </tr>

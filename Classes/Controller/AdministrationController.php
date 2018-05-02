@@ -219,6 +219,15 @@ class AdministrationController extends ActionController
         ]);
     }
 
+    public function formStatusUpdateAction(string $type, int $formId, int $status)
+    {
+        $formRepository = GeneralUtility::makeInstance(FormRepository::class);
+        $formRepository->setStatus($type, $formId, (bool)$status);
+
+        $this->addFlashMessage(sprintf('The form of content element %s has been updated ', $id));
+        $this->forward('formOverview');
+    }
+
 
     public function configurationAction()
     {

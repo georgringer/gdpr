@@ -22,7 +22,7 @@ if (TYPO3_MODE === 'BE') {
         $isVersion9Up ? 'site' : 'tools',
         'tx_gdpr_m1',
         '',
-        ['Administration' => 'index,help,search,delete,disable,reenable,randomize,moduleNotEnabled,log,configuration,formOverview'],
+        ['Administration' => 'index,help,search,delete,disable,reenable,randomize,moduleNotEnabled,log,configuration,formOverview,formStatusUpdate'],
         [
             'access' => 'user,group',
             'icon' => 'EXT:gdpr/Resources/Public/Icons/module.svg',
