@@ -36,7 +36,7 @@ class FormRepository extends BaseRepository
         $data = [
             'ext-form' => $this->getFormForms(),
             'ext-powermail' => $this->getPowermailForms(),
-            'ext-formhandler' => $this->getFormhandlerForms()
+//            'ext-formhandler' => $this->getFormhandlerForms()
         ];
 
         return $data;
@@ -44,7 +44,19 @@ class FormRepository extends BaseRepository
 
     protected function getPowermailForms()
     {
-        return [];
+        $queryBuilder = $this->getQueryBuilder('tt_content');
+        $rows = $queryBuilder
+            ->select('*')
+            ->from('tt_content')
+            ->where(
+                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('list', \PDO::PARAM_STR)),
+                $queryBuilder->expr()->eq('list_type', $queryBuilder->createNamedParameter('powermail_pi1', \PDO::PARAM_STR))
+            )
+            ->execute()
+            ->fetchAll();
+
+        $rows = $this->enhanceRows($rows);
+        return $rows;
     }
 
     protected function getFormhandlerForms()
@@ -59,7 +71,7 @@ class FormRepository extends BaseRepository
             ->select('*')
             ->from('tt_content')
             ->where(
-                $queryBuilder->expr()->like('CType', $queryBuilder->createNamedParameter('form_formframework', \PDO::PARAM_STR))
+                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('form_formframework', \PDO::PARAM_STR))
             )
             ->execute()
             ->fetchAll();
