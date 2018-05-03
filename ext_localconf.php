@@ -9,6 +9,9 @@ $GLOBALS['TYPO3_CONF_VARS']['DB']['QueryRestrictions'][\TYPO3\CMS\Core\Database\
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Database\Query\QueryBuilder::class]['addAdditionalWhereConditions'][1521636341]
     = \GeorgRinger\Gdpr\Hooks\QueryBuilderHook::class;
 
+// overlay icon
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Imaging\IconFactory::class]['overrideIconOverlay'][] = \GeorgRinger\Gdpr\Hooks\IconFactoryHook::class;
+
 $extConfiguration = \GeorgRinger\Gdpr\Domain\Model\Dto\ExtensionConfiguration::getInstance();
 if ($extConfiguration->getOverloadMediaRenderer()) {
     $rendererRegistry = \TYPO3\CMS\Core\Resource\Rendering\RendererRegistry::getInstance();
