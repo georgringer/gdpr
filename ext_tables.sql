@@ -24,5 +24,6 @@ CREATE TABLE fe_users (
 );
 
 CREATE TABLE be_users (
+	gdpr_restricted tinyint(4) DEFAULT '0' NOT NULL,
 	gdpr_module_enable tinyint(4) DEFAULT '0' NOT NULL
 );

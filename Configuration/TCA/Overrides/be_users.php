@@ -19,3 +19,8 @@ $fields = [
     '',
     'before:disableIPlock'
 );
+
+$tca = \GeorgRinger\Gdpr\Service\Tca::getInstance('be_users');
+$tca
+    ->addRestriction('gdpr_restricted')
+    ->add('after:disable');
