@@ -18,6 +18,9 @@ class Table
     protected $titleField = '';
 
     /** @var string */
+    protected $deletedField = '';
+
+    /** @var string */
     protected $titleLabel = '';
 
     /** @var string */
@@ -46,6 +49,7 @@ class Table
         $this->tableName = $tableName;
         $this->title = $tcaCtrl['title'];
         $this->titleField = $tcaCtrl['label'];
+        $this->deletedField = isset($tcaCtrl['delete']) ? $tcaCtrl['delete'] : '';
         $this->titleLabel = $GLOBALS['TCA'][$tableName]['columns'][$this->titleField]['label'];
         $this->gdprRestrictionField = $tcaCtrl['gdpr']['restriction_field'] ?: '';
         $this->gdprRandomizedField = $tcaCtrl['gdpr']['randomized_field'] ?: '';
@@ -85,6 +89,14 @@ class Table
     public function getTitleField(): string
     {
         return $this->titleField;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeletedField(): string
+    {
+        return $this->deletedField;
     }
 
     /**

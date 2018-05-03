@@ -160,7 +160,7 @@ class RecordRepository extends BaseRepository
                 $tableInformation = Table::getInstance($table);
                 $restrictionFieldName = $tableInformation->getGdprRestrictionField();
 
-                $queryBuilder->select('uid', $conf['ctrl']['label'], $restrictionFieldName)
+                $queryBuilder->select('*')
                     ->from($table)
                     ->setMaxResults(200);
                 $likes = [];
