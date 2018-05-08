@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/Default"/>
+
+<f:section name="content">
+    <h1>Form overviews</h1>
+    <p class="lead">Forms are acrusial part regarding privacy. Listing of all forms</p>
+
+
+    <f:for each="{forms}" key="extension" as="forms">
+
+        <div class="panel panel-space panel-default">
+            <div class="panel-heading">{extension}</div>
+            <f:if condition="{forms}">
+                <f:then>
+                    <f:render partial="Forms/Listing" arguments="{_all}"/>
+                </f:then>
+                <f:else>
+                    <div class="alert alert-info">No forms found.</div>
+                </f:else>
+            </f:if>
+        </div>
+    </f:for>
+
+</f:section>
+</html>

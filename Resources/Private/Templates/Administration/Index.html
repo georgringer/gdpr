@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/Default"/>
+
+<f:section name="content">
+    <h1>GDPR</h1>
+    <p class="lead">Overview over all records flagged as holding sensitive data.</p>
+    <f:for each="{restrictedData}" as="data" key="table">
+        <div class="panel panel-space panel-default">
+            <div class="panel-heading">{f:translate(key:data.meta.title,default:data.meta.title)}
+                ({data.statistics.public} / {data.statistics.restricted})
+            </div>
+            <f:if condition="{data.rows}">
+                <f:then>
+                    <f:render partial="TableListing"
+                              arguments="{rows:data.rows,meta:data.meta,table:table,mixedView:0}"/>
+                </f:then>
+                <f:else>
+                    <div class="alert alert-success">No flagged records.</div>
+                </f:else>
+            </f:if>
+        </div>
+
+    </f:for>
+
+</f:section>
+</html>

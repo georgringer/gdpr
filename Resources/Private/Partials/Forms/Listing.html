@@ -1,0 +1,44 @@
+<table class="table table-striped table-hover">
+    <thead>
+    <tr>
+        <th>uid</th>
+        <th>Header</th>
+        <th>Page</th>
+        <td></td>
+    </tr>
+    </thead>
+    <f:for each="{forms}" as="row">
+        <tr>
+            <td>
+                <a href="{row._meta.links.editContentElement}">
+                    <core:iconForRecord table="tt_content" row="{row}"/>
+                    {row.uid}
+                </a>
+            </td>
+            <td>{row.header}</td>
+            <td>
+                <core:iconForRecord table="pages" row="{row._meta.page}"/>
+                {row._meta.path}
+            </td>
+            <td class="col-control">
+                <div class="btn-group" role="group">
+                    <f:if condition="{row._meta.isValidated}">
+                        <f:then>
+                            <f:link.action action="formStatusUpdate" arguments="{type:row._meta.type,formId:row.uid,status:0}" data="{toggle:'tooltip'}" title="This form has been approved. Click to revoke approval." class="btn btn-success">
+                                <core:icon identifier="actions-view-page"/>
+                            </f:link.action>
+                        </f:then>
+                        <f:else>
+                            <f:link.action action="formStatusUpdate" arguments="{type:row._meta.type,formId:row.uid,status:1}" data="{toggle:'tooltip'}" title="This form is not yet approved. Review form and click to approve it" class="btn btn-warning">
+                                <core:icon identifier="actions-view-page"/>
+                            </f:link.action>
+                        </f:else>
+                    </f:if>
+                    <a href="{row._meta.links.editContentElement}" class="btn btn-default">
+                        <core:icon identifier="actions-document-open"/>
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </f:for>
+</table>

@@ -1,0 +1,131 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/Default"/>
+
+<f:section name="content">
+    <h1>Logs</h1>
+    <p class="lead">List of actions logged regarding GDPR.</p>
+
+    <f:form action="log" object="{filter}" name="filter" class="form-horizontal">
+
+        <div class="form-group">
+            <label for="tableName" class="col-xs-2 control-label">
+                Table
+            </label>
+
+            <div class="col-xs-4">
+                <f:form.select id="tableName" property="tableName" options="{allTableNames}" class="form-control"
+                               prependOptionValue="" prependOptionLabel=""/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dateFrom" class="col-xs-2 control-label">
+                Date
+            </label>
+
+            <div class="col-xs-2">
+                <div class="input-group">
+                    <f:form.textfield type="datetime" property="dateFrom" id="dateFrom"
+                                      class="form-control t3js-datetimepicker t3js-clearable"
+                                      data="{date-type:'datetime',date-offset:'0'}"/>
+                    <span class="input-group-btn">
+                        <label class="btn btn-default" for="dateFrom">
+                            <span class="fa fa-calendar"></span>
+                        </label>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-2">
+                <div class="input-group">
+                    <f:form.textfield type="datetime" property="dateTo" id="dateTo"
+                                      class="form-control t3js-datetimepicker t3js-clearable"
+                                      data="{date-type:'datetime',date-offset:'0'}"/>
+                    <span class="input-group-btn">
+                        <label class="btn btn-default" for="dateTo">
+                            <span class="fa fa-calendar"></span>
+                        </label>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="tableName" class="col-xs-2 control-label">
+                Status
+            </label>
+
+            <div class="col-xs-4">
+                <f:form.select id="tableName" property="status" options="{
+				1:'delete',
+				2:'randomize',
+				3:'reenable',
+				4:'restrict'
+				5:'ip anonymize'
+				}" class="form-control" prependOptionValue="" prependOptionLabel=""/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="limit" class="col-xs-2 control-label">
+                Limit
+            </label>
+
+            <div class="col-xs-4">
+                <f:form.select id="limit" property="limit" options="{10:10,50:50,100:100,200:200}"
+                               class="form-control"/>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-4">
+                <button type="submit" class="btn btn-default">
+                    <core:icon identifier="actions-filter"/>
+                    Filter
+                </button>
+            </div>
+        </div>
+    </f:form>
+
+    <f:if condition="{result}">
+        <f:then>
+            <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>Table</th>
+                    <th>Record</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th>User</th>
+                </tr>
+                </thead>
+                <f:for each="{result}" as="row">
+                    <tr>
+                        <td>{row.table_name}</td>
+                        <td>{row.record_id}</td>
+                        <td>
+                            <f:format.date>@{row.tstamp}</f:format.date>
+                        </td>
+                        <td>
+                            <f:switch expression="{row.status}">
+                                <f:case value="1">delete</f:case>
+                                <f:case value="2">randomize</f:case>
+                                <f:case value="3">reenable</f:case>
+                                <f:case value="4">restrict</f:case>
+                                <f:case value="5">ip anonymize</f:case>
+                            </f:switch>
+                        </td>
+                        <td>{row.user}</td>
+                    </tr>
+                </f:for>
+        </f:then>
+        <f:else>
+            <div class="alert alert-info">No results found!</div>
+        </f:else>
+    </f:if>
+
+</f:section>
+</html>

@@ -1,0 +1,43 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Backend/Default"/>
+
+<f:section name="content">
+    <h1>Configuration</h1>
+
+    <f:for each="{tables}" as="table" key="tableName">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th colspan="2">{f:translate(key:table.title)} ({tableName})</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>Restriction field</th>
+                <td>{table.gdprRestrictionField}</td>
+            </tr>
+            <tr>
+                <th>Randomization field</th>
+                <td>{table.gdprRandomizedField}</td>
+            </tr>
+            <f:if condition="{table.gdprRandomizedField}">
+                <tr>
+                    <th>Randomization mapping</th>
+                    <td><f:debug inline="1" title="">{table.gdprRandomizeMapping}</f:debug></td>
+                </tr>
+                <tr>
+                    <th>Randomization date field</th>
+                    <td>{table.gdprRandomizedDateField}</td>
+                </tr>
+                <tr>
+                    <th>Randomization expire period</th>
+                    <td>{table.gdprExpirePeriod}</td>
+                </tr>
+            </f:if>
+            </tbody>
+        </table>
+    </f:for>
+</f:section>
+</html>
