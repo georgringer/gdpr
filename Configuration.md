@@ -1,4 +1,4 @@
-[<- back](Readme.md)
+[<- back](docs/Readme.md)
 
 # Configuration
 
@@ -44,7 +44,7 @@ Randomization uses [Faker](https://github.com/fzaninotto/Faker#formatters) and t
 
 The GDPR module shows the current configuration.
 
-![Configuration](../Resources/Public/Documentation/Screenshots/Configuration.png)
+![Configuration](Resources/Public/Documentation/Screenshots/Configuration.png)
 
 # Technical background
 

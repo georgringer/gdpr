@@ -22,14 +22,14 @@ Costs are **per** installation - discounts possible, ask me directly.
 
 - [Screenshots](../Screenshots.md)
 - [Setup](../Setup.md)
-- [Configuration](../Configuration.md)
+- [Configuration](Configuration.md)
 - Features
-    - [Overview & Status of all forms](../Features/FormOverview.md)
-    - [Improved privacy for embedded videos](../Features/VideoEmbedPrivacy.md)
-    - [Acces restrictions for personal data](../Features/PersonalData.md)
-    - [Randomization](../Features/Randomization.md)
-    - [Search](../Features/Search.md)
-    - [Logs](../Features/Logs.md)
-    - [ReportModule](../Features/ReportModule.md)
+    - [Overview & Status of all forms](Features/FormOverview.md)
+    - [Improved privacy for embedded videos](Features/VideoEmbedPrivacy.md)
+    - [Acces restrictions for personal data](Features/PersonalData.md)
+    - [Randomization](Features/Randomization.md)
+    - [Search](Features/Search.md)
+    - [Logs](Features/Logs.md)
+    - [ReportModule](Features/ReportModule.md)
 
 
