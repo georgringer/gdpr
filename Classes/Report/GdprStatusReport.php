@@ -38,8 +38,8 @@ class GdprStatusReport implements StatusProviderInterface
         $status = ReportStatus::OK;
         foreach (TableInformation::getAllEnabledTables() as $table) {
             $statistic = $recordRepository->getStatisticOfTable($table);
-            $countAction = (int)$statistic[1]['count'];
-            $countNoAction = (int)$statistic[0]['count'];
+            $countAction = $statistic['restricted'];
+            $countNoAction = $statistic['public'];
             $sum = $countAction + $countNoAction;
             if ($countAction > 0) {
                 $status = ReportStatus::WARNING;
