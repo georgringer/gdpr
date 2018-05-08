@@ -40,6 +40,11 @@ $tca
 
 Randomization uses [Faker](https://github.com/fzaninotto/Faker#formatters) and the mapping accepts any property of faker.
 
+## Screenshots
+
+The GDPR module shows the current configuration.
+
+![Configuration](Resources/Public/Documentation/Screenshots/Configuration.png)
 
 # Technical background
 
@@ -49,3 +54,4 @@ The implementation is based on the `RestrictionContainers` of the TYPO3 core.
 
 The limitation of the implementation is that only records having a TCA configuration are covered.
 Furthermore direct access to the database without using the `QueryBuilder` of TYPO3 will still deliver every record.
+
