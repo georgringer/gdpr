@@ -23,7 +23,7 @@ Costs are **per** installation - discounts possible, ask me directly.
 - [Screenshots](Screenshots.md)
 - [Setup](Setup.md)
 - [Configuration](Configuration.md)
-- [Features](Features.md)
+- Features
     - [Overview & Status of all forms](Features/FormOverview.md)
     - [Improved privacy for embedded videos](Features/VideoEmbedPrivacy.md)
     - [Acces restrictions for personal data](Features/PersonalData.md)
