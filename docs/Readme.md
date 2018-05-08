@@ -2,7 +2,6 @@
 
 [![License](https://poser.pugx.org/georgringer/gdpr/license)](https://packagist.org/packages/georgringer/gdpr)
 
-
 This extensions makes it easier for website owners and agencies to have the site compatible to the GDPR (German "DSGVO").
 
 ## Costs
@@ -15,24 +14,19 @@ This extensions makes it easier for website owners and agencies to have the site
 
 **(*\**) Important: Get a 30% discount before 25th May 2018!**
 
-Contact me - *Georg Ringer* via [mail](mail@ringer.it), [TYPO3 slack](https://forger.typo3.com/slack) or [twitter](https://twitter.com/georg_ringer).
+Contact me - *Georg Ringer* via [mail](mailto:mail@ringer.it), [TYPO3 slack](https://forger.typo3.com/slack) or [twitter](https://twitter.com/georg_ringer).
 
 Costs are **per** installation - discounts possible, ask me directly.
 
 ## Screenshots
 
-**Be aware** that this extension does **not** cover every area of the GDPR - especially the frontend part is **not** covered!
+[Screenshots](Screenshots)
 
-![Overview](Resources/Public/Documentation/Screenshots/Overview.png)
-![Record fields](Resources/Public/Documentation/Screenshots/Record-fields.png)
-![Search](Resources/Public/Documentation/Screenshots/Search.png)
-![Configuration](Resources/Public/Documentation/Screenshots/Configuration.png)
-![Help](Resources/Public/Documentation/Screenshots/Help.png)
 
 [Setup](Setup)
 
 ## Drawbacks
-    
+
 The limitation of the implementation is that only records having a TCA configuration are covered.
 Furthermore direct access to the database without using the `QueryBuilder` of TYPO3 will still deliver every record.
 
@@ -124,11 +118,6 @@ By using a CLI command, existing IPs can be anonymized. Example:
 
 A report shows a short information about potential actions.
 
-## Usage
-
-1. Install the extension
-2. Enable the users who are allowed to work with the module in the `be_users` table.
-3. By default, the table `fe_users` is defined as the one having sensitive information, therefore there is a checkbox to hide this record.
 
 ### Add restriction to custom tables
 
