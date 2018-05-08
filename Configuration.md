@@ -1,11 +1,21 @@
+[<- back](Readme.md)
+
 # Configuration
 
-
-### Add restriction to custom tables
+## Add restriction to custom tables
 
 Example call how an own record can be added.
 
+```php
+$tca = \GeorgRinger\Gdpr\Service\Tca::getInstance('be_users');
+$tca
+    ->addRestriction('gdpr_restricted')
+    -add('after:disable');
 ```
+
+## Add randomization
+
+```php
 $tca = \GeorgRinger\Gdpr\Service\Tca::getInstance('fe_users');
 $tca
     ->addRestriction('gdpr_restricted')
@@ -28,6 +38,9 @@ $tca
     ->add('after:disable');
 ```
 
-## Technical background
+Randomization uses [Faker](https://github.com/fzaninotto/Faker#formatters) and the mapping accepts any property of faker.
+
+
+# Technical background
 
 The implementation is based on the `RestrictionContainers` of the TYPO3 core.
