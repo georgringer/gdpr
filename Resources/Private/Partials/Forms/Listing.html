@@ -24,12 +24,12 @@
                 <div class="btn-group" role="group">
                     <f:if condition="{row._meta.isValidated}">
                         <f:then>
-                            <f:link.action action="formStatusUpdate" arguments="{type:row._meta.type,formId:row.uid,status:0}" class="btn btn-success">
+                            <f:link.action action="formStatusUpdate" arguments="{type:row._meta.type,formId:row.uid,status:0}" data="{toggle:'tooltip'}" title="This form has been approved. Click to revoke approval." class="btn btn-success">
                                 <core:icon identifier="actions-view-page"/>
                             </f:link.action>
                         </f:then>
                         <f:else>
-                            <f:link.action action="formStatusUpdate" arguments="{type:row._meta.type,formId:row.uid,status:1}" class="btn btn-warning">
+                            <f:link.action action="formStatusUpdate" arguments="{type:row._meta.type,formId:row.uid,status:1}" data="{toggle:'tooltip'}" title="This form is not yet approved. Review form and click to approve it" class="btn btn-warning">
                                 <core:icon identifier="actions-view-page"/>
                             </f:link.action>
                         </f:else>
