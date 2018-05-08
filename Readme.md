@@ -18,6 +18,22 @@ Contact me - *Georg Ringer* via [mail](mailto:mail@ringer.it), [TYPO3 slack](htt
 
 Costs are **per** installation - discounts possible, ask me directly.
 
+### Differences free <> paid version
+
+|                                    | Free | Paid |
+|:-----------------------------------|:-----|:-----|
+| API to hide records                | ✓    | ✓    |
+| Form overview                      | ✓    | ✓    |
+| Individual form status             |      | ✓    |
+| Randomization                      |      | ✓    |
+| Custom icon for randomized records |      | ✓    |
+| CLI for randomization              |      | ✓    |
+| Log module                         |      | ✓    |
+| Search module                      |      | ✓    |
+| Reports module                     | ✓    | ✓    |
+| Improved privacy for YouTube       |      | ✓    |
+| Support further development        |      | ✓    |
+
 ## Table of Contents
 
 - [Screenshots](../Screenshots.md)
