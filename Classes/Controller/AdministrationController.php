@@ -73,7 +73,7 @@ class AdministrationController extends ActionController
             ],
             [
                 'action' => 'formOverview',
-                'icon' => 'form-email',
+                'icon' => 'ext-gdpr-form-overview',
                 'position' => ButtonBar::BUTTON_POSITION_LEFT,
                 'group' => 1
             ],
