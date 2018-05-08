@@ -2,6 +2,7 @@
 
 namespace GeorgRinger\Gdpr\Log;
 
+use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\SingletonInterface;
@@ -30,13 +31,15 @@ class LogManager implements SingletonInterface
         if ($status < 1 || $status > 5) {
             throw new \UnexpectedValueException(sprintf('Value "%s" is invalid, use one of [1,2,3,4]', $status));
         }
-        $backendUser = $this->getBackendUser()->user;
+
         $fieldValues = [
             'tstamp' => $GLOBALS['EXEC_TIME'],
             'table_name' => $tableName,
             'record_id' => $id,
             'status' => $status,
         ];
+
+        $backendUser = $this->getBackendUser()->user;
         if (is_array($backendUser)) {
             $fieldValues['user'] = $backendUser['uid'];
             $fieldValues['user_name_text'] = $this->getUsernameText($backendUser);
@@ -46,6 +49,13 @@ class LogManager implements SingletonInterface
             $fieldValues['user_name_text'] = 'CLI';
         }
 
+        $fullRow = BackendUtility::getRecord($tableName, $id, '*', '', false);
+        if ($fullRow) {
+            $recordTitle = BackendUtility::getRecordTitle($tableName, $fullRow);
+            if ($recordTitle) {
+                $fieldValues['record_label'] = $recordTitle;
+            }
+        }
 
         GeneralUtility::makeInstance(ConnectionPool::class)
             ->getConnectionForTable('tx_gdpr_domain_model_log')

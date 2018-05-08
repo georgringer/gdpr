@@ -105,9 +105,9 @@
                 <f:for each="{result}" as="row">
                     <tr>
                         <td>{row.table_name}</td>
-                        <td>{row.record_id}</td>
+                        <td>{f:if(condition:row.record_label,then:row.record_label,else:'-')} ({row.record_id})</td>
                         <td>
-                            <f:format.date>@{row.tstamp}</f:format.date>
+                            <f:format.date format="{t3DateTimeFormat}">@{row.tstamp}</f:format.date>
                         </td>
                         <td>
                             <f:switch expression="{row.status}">

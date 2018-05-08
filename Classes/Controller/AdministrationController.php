@@ -58,6 +58,10 @@ class AdministrationController extends ActionController
         $uriBuilder = $this->objectManager->get(UriBuilder::class);
         $uriBuilder->setRequest($this->request);
 
+        $view->assignMultiple([
+            't3DateTimeFormat' => $GLOBALS['TYPO3_CONF_VARS']['SYS']['ddmmyy'] . ' ' . $GLOBALS['TYPO3_CONF_VARS']['SYS']['hhmm']
+        ]);
+
         $buttonList = [
             [
                 'action' => 'index',

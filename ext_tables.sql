@@ -7,6 +7,7 @@ CREATE TABLE tx_gdpr_domain_model_log (
 	tstamp int(11) DEFAULT '0' NOT NULL,
 	table_name varchar(255) NOT NULL DEFAULT '',
 	record_id  int(11) DEFAULT '0' NOT NULL,
+	record_label varchar(255) NOT NULL DEFAULT '',
 	status tinyint(4) DEFAULT '0' NOT NULL,
 	user int(11) DEFAULT '0' NOT NULL,
 	user_name_text varchar(255) NOT NULL DEFAULT '',
