@@ -29,20 +29,18 @@ Costs are **per** installation - discounts possible, ask me directly.
 ![Configuration](Resources/Public/Documentation/Screenshots/Configuration.png)
 ![Help](Resources/Public/Documentation/Screenshots/Help.png)
 
-## Requirements
-
-- TYPO3 CMS 8 LTS & 9 LTS
+[Setup](Setup)
 
 ## Drawbacks
-
-The limitation of the implementation is that only records having a TCA configuration are covered. 
+    
+The limitation of the implementation is that only records having a TCA configuration are covered.
 Furthermore direct access to the database without using the `QueryBuilder` of TYPO3 will still deliver every record.
 
 ## Features
 
 ### Hide sensitive data
 
-The General Data Protection Regulation requires that people can revoke access to their data. 
+The General Data Protection Regulation requires that people can revoke access to their data.
 The extension makes it possible to exclude any record by activating a checkbox. After that, the record won't be accessible and available anymore, no matter if backend or frontend, editor or admin.
 
 A new administration module gives editors the possibility to handle those flagged records and react with one of the following options:
@@ -74,7 +72,7 @@ Array
     [telephone] => +8747861395322
     [fax] => +5484337015644
 )
-``` 
+```
 
 #### Using a CLI command
 
