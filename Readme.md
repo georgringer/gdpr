@@ -40,19 +40,7 @@ A search, similar to the one in the *DB Check* module allows to search within se
 
 See and filter any action of GDPR related actions
 
-### Anonymize IP logging
 
-IPs inserted into the table `sys_log` and `index_stat_search` are now anonymized.
-
-#### Anonymize existing data
-
-By using a CLI command, existing IPs can be anonymized. Example:
-
-```
-# parameters: <tableName> <ipFieldName> <ageFieldName> <ageInDays>
-./web/typo3/sysext/core/bin/typo3 gdpr:anonymizeIp sys_log tstamp IP 365
-./web/typo3/sysext/core/bin/typo3 gdpr:anonymizeIp index_stat_search tstamp IP 180
-```
 
 ### Report for report module
 

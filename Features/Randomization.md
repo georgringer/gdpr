@@ -1,9 +1,15 @@
+[<- Back to Features](../Features.md)
+
 # Randomization
 
+Randomization is a good way to remove the private data from a record and still be able to use the rest o the record.
 
-### Randomize data
+**Example**: A user wants his orders to be removed. After randomization the private data is removed but it is still possible to generate statistics from the order, e.g. orders from a country.
 
-Records can be randomized by using the `fzaninotto/faker`. By providing a mapping per table, is possible to exchange the data with dummy information which looks still ok and can be used in exports. An example would be
+## Randomize data
+
+Records can be randomized by using the `fzaninotto/faker` library.
+By providing a mapping per table, is possible to exchange the data with dummy information which looks still ok and can be used in exports. An example would be
 
 ```
 Array
@@ -22,7 +28,12 @@ Array
 )
 ```
 
-#### Using a CLI command
+## Configuration
+
+See [Configuration](../Configuration.md) for the full configuration.
+
+
+## Using a CLI command
 
 By using a CLI command, all data with a specific age can be randomized: `./web/typo3/sysext/core/bin/typo3 gdpr:randomize`
 

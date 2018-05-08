@@ -6,7 +6,6 @@
 
 - TYPO3 CMS 8 LTS & 9 LTS
 
-
 ## Usage
 
 1. Install the extension
