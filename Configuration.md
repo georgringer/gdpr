@@ -44,3 +44,8 @@ Randomization uses [Faker](https://github.com/fzaninotto/Faker#formatters) and t
 # Technical background
 
 The implementation is based on the `RestrictionContainers` of the TYPO3 core.
+
+## Drawbacks
+
+The limitation of the implementation is that only records having a TCA configuration are covered.
+Furthermore direct access to the database without using the `QueryBuilder` of TYPO3 will still deliver every record.

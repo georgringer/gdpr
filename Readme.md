@@ -18,31 +18,18 @@ Contact me - *Georg Ringer* via [mail](mailto:mail@ringer.it), [TYPO3 slack](htt
 
 Costs are **per** installation - discounts possible, ask me directly.
 
+## Table of Contents
 
-[Screenshots](Screenshots.md)
-[Setup](Setup.md)
+- [Screenshots](Screenshots.md)
+- [Setup](Setup.md)
+- [Configuration](Configuration.md)
+- [Features](Features.md)
+    - [Overview & Status of all forms](Features/FormOverview.md)
+    - [Improved privacy for embedded videos](Features/VideoEmbedPrivacy.md)
+    - [Acces restrictions for personal data](Features/PersonalData.md)
+    - [Randomization](Features/Randomization.md)
+    - [Search](Features/Search.md)
+    - [Logs](Features/Logs.md)
+    - [ReportModule](Features/ReportModule.md)
 
-## Drawbacks
-
-The limitation of the implementation is that only records having a TCA configuration are covered.
-Furthermore direct access to the database without using the `QueryBuilder` of TYPO3 will still deliver every record.
-
-## Features
-
-[Features](Features.md)
-
-
-### Search
-
-A search, similar to the one in the *DB Check* module allows to search within sensitive records.
-
-### Logs
-
-See and filter any action of GDPR related actions
-
-
-
-### Report for report module
-
-A report shows a short information about potential actions.
 
