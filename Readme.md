@@ -18,7 +18,11 @@ Contact me - *Georg Ringer* via [mail](mailto:mail@ringer.it), [TYPO3 slack](htt
 
 Costs are **per** installation - discounts possible, ask me directly.
 
+## Screenshots
 
+
+[Screenshots](Screenshots.md)
+[Setup](Setup.md)
 
 ## Drawbacks
 
