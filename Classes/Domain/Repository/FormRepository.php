@@ -43,7 +43,7 @@ class FormRepository extends BaseRepository
     {
         $data = [];
 
-        if (ExtensionManagementUtility::isLoaded('foxrm')) {
+        if (ExtensionManagementUtility::isLoaded('form')) {
             $data['ext-form'] = $this->getFormForms();
         }
         if (ExtensionManagementUtility::isLoaded('powermail')) {
