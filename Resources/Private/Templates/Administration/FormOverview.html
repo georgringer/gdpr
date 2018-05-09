@@ -8,20 +8,35 @@
     <p class="lead">Forms are acrusial part regarding privacy. Listing of all forms</p>
 
 
-    <f:for each="{forms}" key="extension" as="forms">
+    <f:if condition="{forms}">
+        <f:then>
+            <f:for each="{forms}" key="extension" as="forms">
 
-        <div class="panel panel-space panel-default">
-            <div class="panel-heading">{extension}</div>
-            <f:if condition="{forms}">
-                <f:then>
-                    <f:render partial="Forms/Listing" arguments="{_all}"/>
-                </f:then>
-                <f:else>
-                    <div class="alert alert-info">No forms found.</div>
-                </f:else>
-            </f:if>
-        </div>
-    </f:for>
+                <div class="panel panel-space panel-default">
+                    <div class="panel-heading">{extension}</div>
+                    <f:if condition="{forms}">
+                        <f:then>
+                            <f:render partial="Forms/Listing" arguments="{_all}"/>
+                        </f:then>
+                        <f:else>
+                            <div class="alert alert-info">No forms found.</div>
+                        </f:else>
+                    </f:if>
+                </div>
+            </f:for>
+        </f:then>
+        <f:else>
+            <f:be.infobox title="No form extension used">
+                <p>The following extensions are currently checked:</p>
+                <ul>
+                    <li><a href="https://docs.typo3.org/typo3cms/extensions/form/" target="_blank" rel="noopener noreferrer">Form (by TYPO3 Core)</a></li>
+                    <li><a href="https://extensions.typo3.org/extension/powermail/" target="_blank" rel="noopener noreferrer">powermail</a></li>
+                    <li><a href="https://extensions.typo3.org/extension/formhandler/" target="_blank" rel="noopener noreferrer">formhandler</a></li>
+                </ul>
+            </f:be.infobox>
+        </f:else>
+    </f:if>
+
 
 </f:section>
 </html>
