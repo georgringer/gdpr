@@ -6,6 +6,8 @@ This extensions makes it easier for website owners and agencies to have the site
 
 ## Costs
 
+*The license is a one time fee and includes every update until April 2019.*
+
 - Personal license for one site: *€ 240 excl. taxes*
 - Professional license for one site: *€ 1450 excl. taxes* (*\**)
 - Agency license for up to 25 sites: *€ 5000 excl. taxes* (*\**)
