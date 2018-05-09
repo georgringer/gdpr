@@ -3,11 +3,11 @@
 namespace GeorgRinger\Gdpr\Rendering;
 
 use TYPO3\CMS\Core\Resource\FileInterface;
-use TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer as CoreYouTubeRenderer;
+use TYPO3\CMS\Core\Resource\Rendering\YouTubeRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Fluid\View\StandaloneView;
 
-class YoutubeRenderer extends CoreYouTubeRenderer
+class YoutubeWithConsentRenderer extends YouTubeRenderer
 {
 
     const DEFAULT_TEMPLATE = 'EXT:gdpr/Resources/Private/Templates/Rendering/Youtube.html';
