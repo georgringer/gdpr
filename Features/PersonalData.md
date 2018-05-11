@@ -16,4 +16,24 @@ A new administration module gives editors the possibility to handle those flagge
 
 ![record-randomization.png](../Resources/Public/Documentation/Screenshots/record-randomization.png)
 
-Every action regarding those flags is logged on a central place.
+Every action regarding those flags is loghttps://bitbucket.org/georgringer/gdpr/blob/master/Readme.mdtral place.
+
+
+## Configuration
+
+The following code what is needed to add a custom table to the GDPR extension.
+The code must be placed in the file `Configuration/TCA/Overrides/<tableName/>.php`
+
+```php
+<?php
+$tca = \GeorgRinger\Gdpr\Service\Tca::getInstance('<tableName>');
+$tca
+    ->addRestriction('gdpr_restricted') // name of the field used for the checkbox to flag records 
+  https://bitbucket.org/georgringer/gdpr/raw/master/Resources/Public/Documentation/Screenshots/Record-fields.png## Technical background
+
+The implementation is based on the `RestrictionContainers` of the TYPO3 core.
+
+### Drawbacks
+
+The limitation of the implementation is that only records having a TCA configuration are covered.
+Furthermore direct access to the database withouthttps://bitbucket.org/georgringer/gdpr/blob/master/Features/Randomization.mdyBuilder` of TYPO3 will still dhttps://bitbucket.org/georgringer/gdpr/raw/master/Resources/Public/Documentation/Screenshots/record-randomization.png

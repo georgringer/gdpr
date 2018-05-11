@@ -11,10 +11,8 @@ Randomization is a good way to remove the private data from a record and still b
 Records can be randomized by using the `fzaninotto/faker` library.
 By providing a mapping per table, is possible to exchange the data with dummy information which looks still ok and can be used in exports. An example would be
 
-```bash
-Array
-(
-    [username] => martens.conny
+```
+Arrayhttps://bitbucket.org/georgringer/gdpr/blob/master/Readme.mdname] => martens.conny
     [email] => gerhild.hartwig@yahoo.de
     [password] => 94n3ifyp($+%u#
     [zip] => 33781
@@ -30,17 +28,42 @@ Array
 
 ## Configuration
 
-See [Configuration](../Configuration.md) for the full configuration.
+The code must be placed in the file `Configuration/TCA/Overrides/<tableName/>.php`
+
+```php
+<?php
+$tca = \GeorgRinger\Gdpr\Service\Tca::getInstance('fe_users');
+$tca
+    ->addRestriction('gdpr_restricted')
+    ->addRandomization('gdpr_randomized', [
+        'dateField' => 'tstamp',
+        'expirePeriod' => 360,
+        'mapping' => [
+            'username' => 'userName',
+            'email' => 'email',
+            'password' => 'password',
+            'zip' => 'postcode',
+            'address' => 'address',
+            'city' => 'city',
+            'first_name' => 'firstName',
+            'last_name' => 'lastName',
+            'telephone' => 'e164PhoneNumber',
+            'fax' => 'e164PhoneNumber',
+        ]
+    ])
+    ->add('after:disable');
+```
+
+Randomization uses [Faker](https://github.com/fzaninotto/Faker#formatters) and the mapping accepts any property of faker.
 
 
 ## Using a CLI command
 
-By using a CLI command, all data with a specific age can be randomized.
-An example call looks like `./web/typo3/sysext/core/bin/typo3 gdpr:randomize`
+By using a CLI command, all data with a specific age can be randomized: `./web/typo3/sysext/core/bin/typo3 gdpr:randomize`
 
-The Result can look like this
+Result can look like this
 
-```bash
+```
 Randomize data
 ==============
 
