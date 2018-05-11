@@ -30,7 +30,7 @@ class VimeoWithConsentRenderer extends VimeoRenderer
         $htmlCode = str_replace('<iframe src="', '<iframe id="iframe-' . $uniqueId . '" data-src="', $htmlCode);
 
         $view = GeneralUtility::makeInstance(StandaloneView::class);
-        $templatePath = isset($options['gdpr-template']) ? $options['gdpr-template'] : self::DEFAULT_TEMPLATE;
+        $templatePath = isset($options['gdpr-vimeo-template']) ? $options['gdpr-vimeo-template'] : self::DEFAULT_TEMPLATE;
         $view->setTemplatePathAndFilename(GeneralUtility::getFileAbsFileName($templatePath));
         $view->assignMultiple([
             'width' => $width,
