@@ -20,14 +20,20 @@ use GeorgRinger\Gdpr\Domain\Model\Dto\Table;
 use GeorgRinger\Gdpr\Service\TableInformation;
 use TYPO3\CMS\Core\Database\Query\Expression\CompositeExpression;
 use TYPO3\CMS\Core\Database\Query\Expression\ExpressionBuilder;
+use TYPO3\CMS\Core\Database\Query\Restriction\EnforceableQueryRestrictionInterface;
 use TYPO3\CMS\Core\Database\Query\Restriction\QueryRestrictionInterface;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Restriction to filter records that have been marked as hidden
  */
-class GdprRestriction implements QueryRestrictionInterface
+class GdprRestriction implements QueryRestrictionInterface, EnforceableQueryRestrictionInterface
 {
+    public function isEnforced(): bool
+    {
+        return true;
+    }
+
     /**
      * Main method to build expressions for given tables
      * Evaluates the ctrl/enablecolumns/disabled flag of the table and adds the according restriction if set
