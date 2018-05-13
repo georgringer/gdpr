@@ -1,17 +1,5 @@
 <?php
 
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Database\Query\Restriction\DefaultRestrictionContainer::class] = array(
-    'className' => \GeorgRinger\Gdpr\Xclass\DefaultRestrictionContainer::class
-);
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer::class] = array(
-    'className' => \GeorgRinger\Gdpr\Xclass\FrontendRestrictionContainer::class
-);
-
-
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects'][\TYPO3\CMS\Core\Authentication\BackendUserAuthentication::class] = array(
-    'className' => \GeorgRinger\Gdpr\Xclass\BackendUserAuthentication::class
-);
-
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['processDatamapClass'][]
     = \GeorgRinger\Gdpr\Hooks\DataHandlerHook::class;
 
@@ -30,7 +18,5 @@ if (TYPO3_MODE === 'BE') {
         ]
     );
 
-
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['reports']['tx_reports']['status']['providers']['system'][] = \GeorgRinger\Gdpr\Report\GdprStatusReport::class;
-
 }
