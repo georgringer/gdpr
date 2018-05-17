@@ -7,6 +7,9 @@ if (!isset($GLOBALS['TYPO3_CONF_VARS']['DB']['additionalQueryRestrictions'][\Geo
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Database\Query\QueryBuilder::class]['addAdditionalWhereConditions'][1521636341]
     = \GeorgRinger\Gdpr\Hooks\QueryBuilderHook::class;
 
+$GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['Backend\Template\Components\ButtonBar']['getButtonsHook']['gdpr'] =
+    \GeorgRinger\Gdpr\Hooks\ButtonBarHook::class . '->getButtons';
+
 // overlay icon
 $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS'][\TYPO3\CMS\Core\Imaging\IconFactory::class]['overrideIconOverlay'][] = \GeorgRinger\Gdpr\Hooks\IconFactoryHook::class;
 
