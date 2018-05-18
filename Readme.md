@@ -2,11 +2,31 @@
 
 [![License](https://poser.pugx.org/georgringer/gdpr/license)](https://packagist.org/packages/georgringer/gdpr)
 
-This extensions makes it easier for website owners and agencies to have the site compatible to the GDPR (German "DSGVO").
+This extensions enables you as site owner and extension developer to comply with the GDPR by covering some of the important aspects:
+
+- Find and randomize or remove privacy related data
+- CLI to randomize records after given time
+- Logging of any privay related tasks
+- Overview and status of forms provided by form extensions
+- Improved privacy for included YouTube & Vimeo videos.
+
+## Table of Contents
+
+- [Screenshots](Screenshots.md)
+- [Setup](Setup.md)
+- Features
+    - [Acces restrictions for personal data](Features/PersonalData.md)
+    - [Randomization](Features/Randomization.md)
+    - [Search](Features/Search.md)
+    - [Logs](Features/Logs.md)
+    - [Overview & Status of all forms](Features/FormOverview.md)
+    - [Improved privacy for embedded videos](Features/VideoEmbedPrivacy.md)
+    - [ReportModule](Features/ReportModule.md)
+- [FAQ](FAQ.md)
 
 ## Costs
 
-*The license is a one time fee and includes every update until April 2019.*
+*The license is a one time fee and includes every update until Mai 2019.* Renewal is possible after that.
 
 - Personal license for one site: *€ 240 excl. taxes*
 - Professional license for one site: *€ 1450 excl. taxes* (*\**)
@@ -17,8 +37,6 @@ This extensions makes it easier for website owners and agencies to have the site
 **(*\**) Important: Get a 30% discount before 25th May 2018!**
 
 Contact me - *Georg Ringer* via [mail](mailto:mail@ringer.it), [TYPO3 slack](https://forger.typo3.com/slack) or [twitter](https://twitter.com/georg_ringer).
-
-Costs are **per** installation - discounts possible, ask me directly.
 
 ### Differences free <> paid version
 
@@ -33,20 +51,11 @@ Costs are **per** installation - discounts possible, ask me directly.
 | Log module                         |      | ✓    |
 | Search module                      |      | ✓    |
 | Reports module                     | ✓    | ✓    |
-| Improved privacy for YouTube       |      | ✓    |
+| Privacy for YouTube & Vimeo videos |      | ✓    |
 | Support further development        |      | ✓    |
 
-## Table of Contents
+### Access to paid version
 
-- [Screenshots](../Screenshots.md)
-- [Setup](../Setup.md)
-- Features
-    - [Acces restrictions for personal data](Features/PersonalData.md)
-    - [Randomization](Features/Randomization.md)
-    - [Search](Features/Search.md)
-    - [Logs](Features/Logs.md)
-    - [Overview & Status of all forms](Features/FormOverview.md)
-    - [Improved privacy for embedded videos](Features/VideoEmbedPrivacy.md)
-    - [ReportModule](Features/ReportModule.md)
+Access to a private GitHub repository will be granted. This makes it possible to include the extension in automated deployments.
 
 
