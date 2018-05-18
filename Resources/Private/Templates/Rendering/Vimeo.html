@@ -1,10 +1,9 @@
 <div class="twoclick-video">
     <div id="overlay-{uniqueId}" class="twoclick-video-overlay" style="width:{width}px;height:{height}px">
         <div class="inner">
-            <strong>{f:translate(key:'LLL:EXT:gdpr/Resources/Private/Language/locallang_rendering.xlf:overlay.title')}</strong>
-            <br>
             <p>
                 {f:translate(key:'LLL:EXT:gdpr/Resources/Private/Language/locallang_rendering.xlf:overlay.description')}</p>
+            <div class="btn btn-primary">{f:translate(key:'LLL:EXT:gdpr/Resources/Private/Language/locallang_rendering.xlf:overlay.title')}</div>
         </div>
     </div>
     {html -> f:format.raw()}
@@ -14,13 +13,13 @@
     .twoclick-video-overlay {
         background: #ccc;
         opacity: 0.8;
-        border: 1px solid red;
+        border: 1px solid #eee;
         cursor: pointer;
     }
 
     .twoclick-video-overlay .inner {
         text-align: center;
-        margin: 20% 0;
+        margin: 10% 0;
         padding: 0 20px;
         position: relative;
     }
@@ -32,6 +31,7 @@
             overlay.style.display = 'none';
             var el = document.getElementById('iframe-{uniqueId}');
             el.setAttribute('src', el.getAttribute('data-src'));
+            el.removeAttribute('style');
         }
     });
 </script>

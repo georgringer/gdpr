@@ -27,7 +27,7 @@ class YoutubeWithConsentRenderer extends YouTubeRenderer
     {
         $uniqueId = uniqid('', true);
         $htmlCode = parent::render($file, $width, $height, $options, $usedPathsRelativeToCurrentScript);
-        $htmlCode = str_replace('<iframe src="', '<iframe id="iframe-' . $uniqueId . '" data-src="', $htmlCode);
+        $htmlCode = str_replace('<iframe src="', '<iframe style="display:none" id="iframe-' . $uniqueId . '" data-src="', $htmlCode);
 
         $view = GeneralUtility::makeInstance(StandaloneView::class);
         $templatePath = isset($options['gdpr-youtube-template']) ? $options['gdpr-youtube-template'] : self::DEFAULT_TEMPLATE;
