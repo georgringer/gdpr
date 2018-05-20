@@ -225,6 +225,11 @@ class AdministrationController extends ActionController
         ]);
     }
 
+    /**
+     * @param string $type type
+     * @param int $formId form
+     * @param int $status status
+     */
     public function formStatusUpdateAction(string $type, int $formId, int $status)
     {
         $formRepository = GeneralUtility::makeInstance(FormRepository::class);
