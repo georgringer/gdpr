@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Make TYPO3 compatible to GDPR',
-    'description' => '',
+    'description' => 'This extensions enables you as site owner and extension developer to comply with the GDPR by covering some of the important aspects',
     'category' => 'module',
     'author' => 'Georg Ringer',
     'author_email' => 'mail@ringer.it',
