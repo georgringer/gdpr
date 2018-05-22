@@ -6,7 +6,7 @@ This extensions enables you as site owner and extension developer to comply with
 
 - Find and randomize or remove privacy related data
 - CLI to randomize records after given time
-- Logging of any privay related tasks
+- Logging of any privacy related tasks
 - Overview and status of forms provided by form extensions
 - Improved privacy for included YouTube & Vimeo videos.
 
