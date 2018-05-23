@@ -28,8 +28,8 @@ This extensions enables you as site owner and extension developer to comply with
 
 *The license is a one time fee and includes every update until Mai 2019.* Renewal is possible after that.
 
-- Personal license for one site: *€ 240 excl. taxes*
-- Professional license for one site: *€ 1450 excl. taxes* (*\**)
+- Personal license for one site (for up to 5 employees): *€ 240 excl. taxes*
+- Professional license for one site (5 or more employees): *€ 1450 excl. taxes* (*\**)
 - Agency license for up to 25 sites: *€ 5000 excl. taxes* (*\**)
 - Agency license for unlimited sites: *€ 7500 excl. taxes* (*\**)
 - Academic license for universities, research Institutions, and colleges  *€ 490 excl. taxes*
