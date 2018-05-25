@@ -20,6 +20,7 @@ use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
 use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Registry;
 use TYPO3\CMS\Core\Type\Bitmask\Permission;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class FormRepository extends BaseRepository
@@ -38,15 +39,26 @@ class FormRepository extends BaseRepository
         $this->registry = GeneralUtility::makeInstance(Registry::class);
     }
 
-    public function getAllForms()
+    public function getAllForms(): array
     {
-        $data = [
-            'ext-form' => $this->getFormForms(),
-            'ext-powermail' => $this->getPowermailForms(),
-//            'ext-formhandler' => $this->getFormhandlerForms()
-        ];
+        $data = [];
+
+        if (ExtensionManagementUtility::isLoaded('form')) {
+            $data['ext-form'] = $this->getFormForms();
+        }
+        if (ExtensionManagementUtility::isLoaded('powermail')) {
+            $data['ext-powermail'] = $this->getPowermailForms();
+        }
+        if (ExtensionManagementUtility::isLoaded('formhandler')) {
+            $data['ext-formhandler'] = $this->getFormhandlerForms();
+        }
 
         return $data;
+    }
+
+    public function setStatus($type, $id, bool $status)
+    {
+        $this->registry->set(self::REGISTRY_NAMESPACE, $this->getRegistryKey($type, $id), $status);
     }
 
     protected function getPowermailForms()
@@ -68,7 +80,19 @@ class FormRepository extends BaseRepository
 
     protected function getFormhandlerForms()
     {
-        return [];
+        $queryBuilder = $this->getQueryBuilder('tt_content');
+        $rows = $queryBuilder
+            ->select('*')
+            ->from('tt_content')
+            ->where(
+                $queryBuilder->expr()->eq('CType', $queryBuilder->createNamedParameter('list', \PDO::PARAM_STR)),
+                $queryBuilder->expr()->eq('list_type', $queryBuilder->createNamedParameter('formhandler_pi1', \PDO::PARAM_STR))
+            )
+            ->execute()
+            ->fetchAll();
+
+        $rows = $this->enhanceRows('formhandler', $rows);
+        return $rows;
     }
 
     protected function getFormForms()
