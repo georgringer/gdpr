@@ -2,7 +2,11 @@
 
 # Form overview
 
+Overview over all forms
 ![FormOverview.png](../Resources/Public/Documentation/Screenshots/FormOverview.png)
+
+If supported, also the count of mail log and preview is shown
+![FormOverviewMails.png](../Resources/Public/Documentation/Screenshots/FormOverviewMails.png)
 
 Each form must be checked if it complies with the GDPR. This can't be done by the extension but it can help to ease the workflow.
 
