@@ -222,6 +222,7 @@ class AdministrationController extends ActionController
         $formRepository = GeneralUtility::makeInstance(FormRepository::class);
         $this->view->assignMultiple([
             'forms' => $formRepository->getAllForms(),
+            'previewCount' => FormRepository::LOG_COUNT_PREVIEW,
         ]);
     }
 
