@@ -34,7 +34,7 @@ This extensions enables you as site owner and extension developer to comply with
 - Agency license for unlimited sites: *€ 7500 excl. taxes* (*\**)
 - Academic license for universities, research Institutions, and colleges  *€ 490 excl. taxes*
 
-**(*\**) Important: Get a 30% discount before 25th May 2018!**
+**(*\**) Important: Get a 30% discount because of T3DD until 30th of June!**
 
 Contact me - *Georg Ringer* via [mail](mailto:mail@ringer.it), [TYPO3 slack](https://forger.typo3.com/slack) or [twitter](https://twitter.com/georg_ringer).
 
