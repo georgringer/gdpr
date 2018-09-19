@@ -1,0 +1,66 @@
+.. ==================================================
+.. FOR YOUR INFORMATION
+.. --------------------------------------------------
+.. -*- coding: utf-8 -*- with BOM.
+
+.. This is 'Includes.txt'. It is included at the very top of each and
+   every ReST source file in this documentation project (= manual).
+
+
+.. ==================================================
+.. DEFINE SOME TEXT ROLES
+.. --------------------------------------------------
+
+.. role::   typoscript(code)
+
+.. role::   ts(typoscript)
+   :class:  typoscript
+
+.. role::   php(code)
+
+.. highlight:: php
+
+.. |img-screenshot-overview|      image:: /Images/Screenshots/Overview.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-record-fields|      image:: /Images/Screenshots/Record-fields.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-search|      image:: /Images/Screenshots/Search.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-configuration|      image:: /Images/Screenshots/Configuration.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-form-overview|      image:: /Images/Screenshots/FormOverview.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-form-overview-mails|      image:: /Images/Screenshots/FormOverviewMails.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-report-module|      image:: /Images/Screenshots/Report.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-logs|      image:: /Images/Screenshots/Logs.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-help|      image:: /Images/Screenshots/Help.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-record-randomization|      image:: /Images/Screenshots/record-randomization.png
+.. :border: 0
+.. :align: left
+
+.. |img-screenshot-enable-module|      image:: /Images/Screenshots/EnableModule.png
+.. :border: 0
+.. :align: left
+
