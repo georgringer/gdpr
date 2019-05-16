@@ -57,7 +57,7 @@ The following 2 files need to be changed/added to your theme extension:
     $tca = \GeorgRinger\Gdpr\Service\Tca::getInstance('tx_powermail_domain_model_mail');
     $tca
         ->addRestriction('gdpr_restricted') // name of the field used for the checkbox to flag records
-        -add('after:disable'); // positioning of the new field
+        ->add('after:disable'); // positioning of the new field
 
 Required actions
 ^^^^^^^^^^^^^^^^
