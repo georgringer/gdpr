@@ -65,6 +65,7 @@ class RandomizeCommand extends Command
                 $io->success(sprintf('%d records randomized', $count));
             }
         }
+        return 0;
     }
 
     /**

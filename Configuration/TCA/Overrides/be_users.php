@@ -7,25 +7,18 @@ $fields = [
         'label' => 'LLL:EXT:gdpr/Resources/Private/Language/locallang.xlf:be_users.gdpr_module_enable',
         'config' => [
             'type' => 'check',
-            'default' => 0
+            'renderType' => 'checkboxLabeledToggle',
+            'items' => [
+                [
+                    0 => '',
+                    1 => '',
+                    'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
+                    'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled'
+                ],
+            ],
         ]
     ]
 ];
-
-if (version_compare(TYPO3_branch, '9.2', '>=')) {
-    $fields['gdpr_module_enable']['config'] = [
-        'type' => 'check',
-        'renderType' => 'checkboxLabeledToggle',
-        'items' => [
-            [
-                0 => '',
-                1 => '',
-                'labelChecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.enabled',
-                'labelUnchecked' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.disabled'
-            ],
-        ],
-    ];
-}
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('be_users', $fields);
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(

@@ -93,7 +93,7 @@ class AnonymizeIpCommand extends Command
 
         $io->section(sprintf('Starting with table "%s", IP field "%s", age field "%s" and older than %d days', $table, $targetField, $ageField, $ageField));
         $this->update($table, $targetField, $ageField, $age);
-
+        return 0;
     }
 
     private function update(string $table, string $targetField, string $ageField, int $age)

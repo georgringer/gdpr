@@ -47,7 +47,6 @@ class AdministrationController extends ActionController
         $pageRenderer = GeneralUtility::makeInstance(PageRenderer::class);
         $pageRenderer->loadRequireJsModule('TYPO3/CMS/Backend/Modal');
         $pageRenderer->loadRequireJsModule('TYPO3/CMS/Backend/DateTimePicker');
-        $pageRenderer->loadRequireJsModule('TYPO3/CMS/Backend/jquery.clearable');
         $pageRenderer->loadRequireJsModule('TYPO3/CMS/Backend/Tooltip');
 
         $dateFormat = ($GLOBALS['TYPO3_CONF_VARS']['SYS']['USdateFormat'] ? ['MM-DD-YYYY', 'HH:mm MM-DD-YYYY'] : ['DD-MM-YYYY', 'HH:mm DD-MM-YYYY']);

@@ -3,26 +3,14 @@ declare(strict_types=1);
 
 namespace GeorgRinger\Gdpr\Domain\Repository;
 
-use GeorgRinger\Gdpr\Database\Query\Restriction\GdprOnlyRestriction;
-use GeorgRinger\Gdpr\Database\Query\Restriction\GdprRestriction;
-use GeorgRinger\Gdpr\Domain\Model\Dto\Search;
-use GeorgRinger\Gdpr\Domain\Model\Dto\Table;
-use GeorgRinger\Gdpr\Log\LogManager;
-use GeorgRinger\Gdpr\Service\Randomization;
-use GeorgRinger\Gdpr\Service\TableInformation;
 use TYPO3\CMS\Backend\Routing\UriBuilder;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Authentication\BackendUserAuthentication;
-use TYPO3\CMS\Core\Database\Connection;
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Database\Query\QueryBuilder;
-use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
-use TYPO3\CMS\Core\DataHandling\DataHandler;
 use TYPO3\CMS\Core\Registry;
+use TYPO3\CMS\Core\Service\FlexFormService;
 use TYPO3\CMS\Core\Type\Bitmask\Permission;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Service\FlexFormService;
 
 class FormRepository extends BaseRepository
 {

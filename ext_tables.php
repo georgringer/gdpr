@@ -4,13 +4,12 @@ $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['t3lib/class.t3lib_tcemain.php']['proc
     = \GeorgRinger\Gdpr\Hooks\DataHandlerHook::class;
 
 if (TYPO3_MODE === 'BE') {
-    $isVersion9Up = \TYPO3\CMS\Core\Utility\VersionNumberUtility::convertVersionNumberToInteger(TYPO3_version) >= 9000000;
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
-        'GeorgRinger.gdpr',
-        $isVersion9Up ? 'site' : 'tools',
+        'Gdpr',
+        'site',
         'tx_gdpr_m1',
         '',
-        ['Administration' => 'index,help,search,delete,disable,reenable,randomize,moduleNotEnabled,log,configuration,formOverview,formStatusUpdate'],
+        [\GeorgRinger\Gdpr\Controller\AdministrationController::class => 'index,help,search,delete,disable,reenable,randomize,moduleNotEnabled,log,configuration,formOverview,formStatusUpdate'],
         [
             'access' => 'user,group',
             'icon' => 'EXT:gdpr/Resources/Public/Icons/module.svg',

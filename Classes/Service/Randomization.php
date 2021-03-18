@@ -26,7 +26,7 @@ class Randomization
         $locale = $extensionConfiguration->getRandomizerLocale() ?: 'en_US';
 
         if (class_exists(Environment::class) && !Environment::isComposerMode()
-            || class_exists(Bootstrap::class) && !Bootstrap::usesComposerClassLoading()
+            || class_exists(Bootstrap::class) && !Environment::isComposerMode()
         ) {
             @include 'phar://' . ExtensionManagementUtility::extPath('gdpr') . 'Resources/Private/Php/faker.phar/vendor/autoload.php';
         }
