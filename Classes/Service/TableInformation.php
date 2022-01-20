@@ -9,6 +9,7 @@ class TableInformation
     public static function isTableEnabled(string $table): bool
     {
         if (isset($GLOBALS['TCA'][$table])
+            && !empty($GLOBALS['TCA'][$table]['ctrl']['gdpr'])
             && is_array($GLOBALS['TCA'][$table]['ctrl']['gdpr'])
             && $GLOBALS['TCA'][$table]['ctrl']['gdpr']['enabled']) {
             return true;

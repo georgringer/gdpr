@@ -50,12 +50,12 @@ class Table
         $this->title = $tcaCtrl['title'];
         $this->titleField = $tcaCtrl['label'];
         $this->deletedField = isset($tcaCtrl['delete']) ? $tcaCtrl['delete'] : '';
-        $this->titleLabel = $GLOBALS['TCA'][$tableName]['columns'][$this->titleField]['label'];
-        $this->gdprRestrictionField = $tcaCtrl['gdpr']['restriction_field'] ?: '';
-        $this->gdprRandomizedField = $tcaCtrl['gdpr']['randomized_field'] ?: '';
-        $this->gdprRandomizeMapping = $tcaCtrl['gdpr']['randomize_mapping'] ?: [];
-        $this->gdprRandomizedDateField = $tcaCtrl['gdpr']['randomize_datefield'] ?: '';
-        $this->gdprExpirePeriod = $tcaCtrl['gdpr']['randomize_expirePeriod'] ?: 365;
+        $this->titleLabel = $GLOBALS['TCA'][$tableName]['columns'][$this->titleField]['label'] ?? '';
+        $this->gdprRestrictionField = $tcaCtrl['gdpr']['restriction_field'] ?? '';
+        $this->gdprRandomizedField = $tcaCtrl['gdpr']['randomized_field'] ?? '';
+        $this->gdprRandomizeMapping = $tcaCtrl['gdpr']['randomize_mapping'] ?? [];
+        $this->gdprRandomizedDateField = $tcaCtrl['gdpr']['randomize_datefield'] ?? '';
+        $this->gdprExpirePeriod = $tcaCtrl['gdpr']['randomize_expirePeriod'] ?? 365;
     }
 
     /**
