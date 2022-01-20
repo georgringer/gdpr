@@ -14,7 +14,7 @@ class IconFactoryHook
     {
         if (TableInformation::isTableEnabled($table)) {
             $table = Table::getInstance($table);
-            if ($table->randomizationEnabled() && $row[$table->getGdprRandomizedField()]) {
+            if ($table->randomizationEnabled() && ($row[$table->getGdprRandomizedField()] ?? false)) {
                 $iconName = 'overlay-locked';
             }
         }
