@@ -60,8 +60,8 @@ class RecordRepository extends BaseRepository
             ->fetchAll();
 
         return [
-            'restricted' => (int)$rows[1]['count'],
-            'public' => (int)$rows[0]['count']
+            'restricted' => (int) ($rows[1]['count'] ?? 0),
+            'public' => (int) ($rows[0]['count'] ?? 0)
         ];
     }
 

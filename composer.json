@@ -20,7 +20,7 @@
 	],
 	"require": {
 		"typo3/cms-core": "^10 || ^11",
-		"fzaninotto/faker": "^1.7"
+		"fakerphp/faker": "^1.10"
 	},
 	"autoload": {
 		"psr-4": {

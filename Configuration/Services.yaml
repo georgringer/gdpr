@@ -1,0 +1,31 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    GeorgRinger\Gdpr\:
+        resource: '../Classes/*'
+        exclude: '../Classes/Domain/Model/*'
+
+    #
+    # Commands to be executed by typo3, where the key of the array
+    # is the name of the command (to be called as the first argument after typo3).
+    # Required parameter is the "class" of the command which needs to be a subclass
+    # of Symfony/Console/Command.
+    #
+    # example: bin/typo3 gdpr:randomize
+
+    GeorgRinger\Gdpr\Command\RandomizeCommand:
+        tags:
+            -
+                name: 'console.command'
+                command: 'gdpr:randomize'
+                description: 'Randomize data'
+
+    GeorgRinger\Gdpr\Command\AnonymizeIpCommand:
+        tags:
+            -
+                name: 'console.command'
+                command: 'gdpr:anonymizeIp'
+                description: 'Anonymize IP address of given rows'
