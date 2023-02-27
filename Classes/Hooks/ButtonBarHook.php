@@ -131,7 +131,7 @@ class ButtonBarHook
             return null;
         }
         $firstKey = array_keys($editGetParam);
-        $tableName = $firstKey[0];
+        $tableName = (string)$firstKey[0];
         if (TableInformation::isTableEnabled($tableName)) {
             $this->tableName = $tableName;
             return isset($editGetParam[$tableName]) ? $editGetParam[$tableName] : null;
